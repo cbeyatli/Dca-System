@@ -120,8 +120,8 @@ export default function Home() {
       <main className={styles.content}>
         <h1 className={styles.title}>BaseDca</h1>
         <p className={styles.subtitle}>
-          Wallet baglantisi olmadan Bitcoin icin DCA plani olustur, butceyi ve
-          tahmini BTC birikimini gor.
+          Create a Bitcoin DCA plan without connecting a wallet, and view your
+          budget and estimated BTC accumulation.
         </p>
 
         <section className={styles.card}>
