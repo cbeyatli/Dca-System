@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { sdk } from "@farcaster/miniapp-sdk";
 import styles from "./page.module.css";
 
 const INTERVALS = [
@@ -35,6 +36,12 @@ export default function Home() {
   const [notes, setNotes] = useState("");
   const [savedPlans, setSavedPlans] = useState<BtcPlan[]>([]);
   const [formError, setFormError] = useState("");
+
+  useEffect(() => {
+    sdk.actions.ready().catch(() => {
+      // Ignore ready call failures outside Mini App context.
+    });
+  }, []);
 
   useEffect(() => {
     const raw = window.localStorage.getItem(SAVED_PLANS_KEY);
